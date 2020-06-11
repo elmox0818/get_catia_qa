@@ -1,0 +1,4 @@
+/backup
+/.env
+/lib/__pycache__
+/results/csv
