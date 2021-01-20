@@ -2,10 +2,9 @@
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
-from progressbar import progressbar
 from lib.sqlserver import ReadQueryBySQLServer
 
-
+# 環境変数を取得する関数
 def get_env():
     path = join(dirname(__file__), ".env")
     load_dotenv(dotenv_path=path)
@@ -19,11 +18,11 @@ def get_env():
 
 
 def get_export():
-    # 接続情報を取得
+    # 環境変数を取得
     env = get_env()
 
     # 4つのテーブルに対して処理を実行
-    for i in progressbar(range(1, 5)):
+    for i in range(1, 5):
         # 1はないので表記しない
         if i == 1:
             sql = "SELECT * FROM [Catia].[dbo].[EMP_Catia]"
